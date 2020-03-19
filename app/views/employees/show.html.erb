@@ -7,12 +7,16 @@
 <p>Alias: <%= @employee.alias %></p>
 <p>Title: <%= @employee.title %></p>
 <p>Office: <%= @employee.office %></p>
+<!-- Nice work with the conditional logic here, and building your link the Railsy way.
+You can also simply have @employee.dog as the second argument here, Rails will know you intend the show route. -->
 <% if @employee.dog %>
     <p>Dog: <%= link_to @employee.dog.name, dog_path(@employee.dog) %></p>
 <% else %>
     <p>Dog: None</p>
 <% end %>
 
+<!-- You could also use a `button_to` here, it generates an HTML form in the same sort of way with less code.
+Check out the docs! -->
 <%= form_tag edit_employee_path(@employee), method: :get do %>
     <%= submit_tag 'Edit' %>
 <% end %>

@@ -1,5 +1,6 @@
 class EmployeesController < ApplicationController
-
+  # Here would be a good opportunity to look into Rails' before_action, 
+  # to see how you could run your "set_..." private methods immediately prior to certain routes.
     def index
         set_all_employees
     end
@@ -14,6 +15,7 @@ class EmployeesController < ApplicationController
     end
 
     def create
+      # Good job with validations and error handling here.
         @employee = Employee.new(employee_params)
         if @employee.save
             redirect_to employee_path(@employee)
