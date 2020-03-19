@@ -1,5 +1,7 @@
 <h1>New Employee</h1>
 
+<!-- Fun refactor: if you talk to @employee.errors.full_messages right here, you won't
+need the if wrapper, because the default value for that call is an empty array instead of a nil. -->
 <% if @errors %>
     <% @errors.each do |error| %>
         <p>Error: <%= error %></p>

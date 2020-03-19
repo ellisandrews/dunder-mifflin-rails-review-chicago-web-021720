@@ -3,6 +3,8 @@
 <p>Name: <%= @dog.name %></p>
 <p>Breed: <%= @dog.breed %></p>
 <p>Age: <%= @dog.age %></p>
+<!-- No need for the if here but I respect the caution. 
+You can let Ruby iterate over an empty association array with no error. -->
 <% if @dog.employees %>
     <p>Employees:</p>
     <ul>
